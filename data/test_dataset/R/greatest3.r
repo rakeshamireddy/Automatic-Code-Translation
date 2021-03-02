@@ -1,7 +1,7 @@
 {
-    x <- as.integer(readline(prompt = "Enter first number :"))
-    y <- as.integer(readline(prompt = "Enter second number :"))
-    z <- as.integer(readline(prompt = "Enter third number :"))
+    x <- 71
+    y <- 87
+    z <- 24
 
     if (x > y && x > z) {
       print(paste("Greatest is :", x))
