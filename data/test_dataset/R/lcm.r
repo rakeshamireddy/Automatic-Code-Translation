@@ -16,6 +16,6 @@ greater = greater + 1
 return(lcm)
 }
 # take input from the user
-num1 = as.integer(readline(prompt = "Enter first number: "))
-num2 = as.integer(readline(prompt = "Enter second number: "))
+num1 = 48
+num2 = 72
 print(paste("The L.C.M. of", num1,"and", num2,"is", lcm(num1, num2)))
