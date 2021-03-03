@@ -1,1 +1,15 @@
-.
+def	""
+():	<- function(n) {
+if	if
+else	else
+elif	else if
+for	for
+:	{
+=	=
+//	/
+%	%%
+range	seq
+[]	c()
+print	print
+
+	
