@@ -1,10 +1,13 @@
-num = as.double(readline(prompt="Enter a number: "))
+integerType <- function(num){
 if(num > 0) {
-  print("Positive number")
+print("Positive number")
 } else {
-  if(num == 0) {
-    print("Zero")
-  } else {
-    print("Negative number")
-  }
+if(num == 0) {
+print("Zero")
+} else {
+print("Negative number")
 }
+}
+}
+
+integerType(-90)

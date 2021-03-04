@@ -1,6 +1,10 @@
-x <- 10
-if (x %% 10 ==0){
-  print(paste("Number is divisible by 10"))
+divisibleby10 <- function(num) {
+if(num %% 10 == 0){
+    print("True")
 }else{
-  print(paste("Number is not divisible by 10"))
+    print("False")
 }
+
+}
+
+divisibleby10(60)

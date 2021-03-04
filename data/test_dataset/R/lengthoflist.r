@@ -1,4 +1,10 @@
-my_list <- list(L1 = "AAA",                      # Create example list
-                L2 = 1:7,
-                L3 = c("Hello", "What's up?"))
-length(my_list)  
+lengthofVector <- function(vector){
+count <- 0
+for (i in vector){
+    count <- count + 1
+}
+print(count)
+}
+
+array <- c(3,4,5,1,6)
+lengthofVector(array)

@@ -1,2 +1,6 @@
-x <- c(67, 43, 23, 12, 10, 56)
-sort (x)
+sortvector <- function(vector){
+print(sort(vector))
+}
+
+array <- c(23,12,11,34,21)
+sortvector(array)

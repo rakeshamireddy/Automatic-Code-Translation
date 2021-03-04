@@ -1,2 +1,5 @@
-x <- c(1,2,3)
-print (x+1)
+add1 <- function(n) {
+   print( n+1)
+}
+
+add1(90)

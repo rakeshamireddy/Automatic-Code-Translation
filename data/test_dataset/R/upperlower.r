@@ -1,7 +1,12 @@
-# Changing to Upper case.
-result <- toupper("R Programming Language")
+upperCase <- function(word){
+result <- toupper(word)
 print(result)
+}
 
-# Changing to lower case.
-result <- tolower("R Programming Language")
+lowerCase <- function(word){
+result <- tolower(word)
 print(result)
+}
+
+upperCase("Function")
+lowerCase("FUNCTION")

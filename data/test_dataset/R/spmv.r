@@ -1,11 +1,23 @@
-x <- c(1,2,3)
-y <- c(2,4,5)
+sum <- function(vector){
+result <- 0
+for(i in vector){
+    result = result + i
+}
+print(result)
+}
 
-print(x+y)
-print(x*y)
+product <- function(vector){
+    result <- 1
+    for(i in vector){
+        result = result*i
+    }
+    print(result)
+}
 
-mean(x, na.rm=TRUE)
-mean(y, na.rm=TRUE)
+array <- c(1,2,3,4)
+sum(array)
+product(array)
+mean(array, na.rm=TRUE)
 
 
 
