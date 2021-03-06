@@ -1,0 +1,1 @@
+df.rename({'a': 'b'}, axis = 1)

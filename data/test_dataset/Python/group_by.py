@@ -1,0 +1,1 @@
+df.groupby(by ="age").mean()
