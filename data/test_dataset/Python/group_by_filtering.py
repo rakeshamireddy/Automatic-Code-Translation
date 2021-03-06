@@ -1,0 +1,1 @@
+df.groupby('age').filter(lambda x:x.g.mean() > 10)
