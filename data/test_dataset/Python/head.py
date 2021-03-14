@@ -1,3 +1,3 @@
 import pandas as pd
 df = pd.read_csv("nba_2013.csv")
-df.sample(100)
+df.head()
