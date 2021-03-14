@@ -1,6 +1,3 @@
 library(readr)
 df <- read_csv("D:/Users/Sriram/Desktop/GG/python2R/nba_2013.csv")
-library(dplyr)
-df %>%
-  group_by(age) %>%
-  filter(mean(g)>10)
+head(df)
