@@ -1,6 +1,3 @@
-sortvector <- function(vector){
-print(sort(vector))
-}
-
-array <- c(23,12,11,34,21)
-sortvector(array)
+library(readr)
+df <- read_csv("D:/Users/Sriram/Desktop/GG/python2R/nba_2013.csv")
+arrange(df,age)
