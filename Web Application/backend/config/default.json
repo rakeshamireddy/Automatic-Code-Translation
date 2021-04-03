@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://root:root@code-translation.wly7v.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://root:root@code-translation.wly7v.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret": "secrettoken"
 }
