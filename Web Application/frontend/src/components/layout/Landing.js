@@ -7,7 +7,7 @@ export const Landing = () => {
         <div className="landing-inner">
           <h1 className="x-large">Transcoder</h1>
           <p className="lead">
-            Translate your programs from R to python and vice-versa
+            Translate your code between R and python programming languages
           </p>
           <div className="buttons">
             <a href="register.html" className="btn btn-primary">Sign Up</a>
