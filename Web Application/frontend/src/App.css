@@ -46,6 +46,10 @@ img {
   width: 70%;
 }
 
+.file-icon{
+  align-items: center;
+}
+
 .column2 {
   margin: 0 15px 25px;
   border: none;
