@@ -43,17 +43,18 @@ img {
 .column1 {
   margin: 0 15px 25px;
   border: none;
-  width: 70%;
-}
-
-.file-icon{
-  align-items: center;
+  width: 50%;
+  border-right: 3px solid var(--primary-color);
 }
 
 .column2 {
   margin: 0 15px 25px;
   border: none;
-  width: 30%;
+  width: 50%;
+}
+
+.choose-file{
+  
 }
 
 /* Utilities */
