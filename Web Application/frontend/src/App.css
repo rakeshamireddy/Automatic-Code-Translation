@@ -185,6 +185,7 @@ img {
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
+  border-radius: 0.5rem;
 }
 
 .btn-light,
@@ -201,6 +202,10 @@ img {
 .alert-dark {
   background: var(--dark-color);
   color: #fff;
+}
+
+.text-danger{
+  color: var(--danger-color);
 }
 
 .btn-danger,

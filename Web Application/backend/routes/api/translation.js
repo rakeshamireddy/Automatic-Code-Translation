@@ -32,7 +32,7 @@ router.put('/', [auth, [
   // var child;
   // console.log (child)
   // cmd1 = 'python3 TransCoder/translate.py --src_lang python --tgt_lang java --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < fibo.py'
-  // cmd1 = 'python3 TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < '+ 'cat ../frontend/src/files/public/uploads/'+ sourceFile
+  // cmd1 = 'python3 TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < cat ../frontend/src/files/public/uploads/'+ sourceFile
   cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
   // var cmdout
   // const util = require('util');

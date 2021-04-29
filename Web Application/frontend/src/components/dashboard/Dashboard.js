@@ -114,12 +114,12 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
     <form onSubmit={e=> onSubmit(e)}>
       <div className = "container_2columns">
         <div className = "column1">
-          <p className="large text-center text-primary"><i className = "fas fa-file-alt"></i></p>
-          <p className = "lead text-center"> Choose your source language</p>
+          {/* <p className="large text-center text-primary"><i className = "fas fa-file-alt"></i></p>
+          <p className = "lead text-center"> Choose your source language</p> */}
           {/* <br/>
           <br/> */}
           <div>
-            {/* <label for="sourceLang">Choose source language</label> */}
+            <label for="sourceLang">Choose source language</label>
             {' '}
             <select name="sourceLang" className="btn btn-light"
                 value={sourceLang}
@@ -131,32 +131,30 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
                 <option value="R">R</option>
             </select>
           </div>
-          <p className = "lead text-center">Upload Your Source File</p>
+          {/* <p className = "lead text-center">Upload Your Source File</p> */}
           {/* </form> */}
             
-            {/* <br/>
-            <br/> */}
-          <form className="text-center">
+            <br/>
+            <br/>
+          <form >
+            {/* className="text-center" */}
             <div>
               {/* className = "file-field input-field" */}
               <div className="choose-file">
                   {/* className = "btn #64b5f6 blue darken-1" */}
                     {/* <span> Upload program file</span>  */}
-                <input type = "file" onChange={changeHandler} name="sourceFile" val={sourceFile}></input>
-                {isFilePicked ? ( <div> <p>Filename: {selectedFile.name} Selected</p></div>): (<p>Select File</p>)}
+                <input type = "file" onChange={changeHandler} name="sourceFile" val={sourceFile}></input><br/>
+                {isFilePicked ? ( <div> <p>Filename: {selectedFile.name} Selected</p></div>): (<span className = "text-danger">Select File</span>)}
               </div>
             </div>
               <br/>
             <button onClick={handleSubmission} type = "submit" className = "btn btn-primary"> Upload file</button>
           </form>
-        </div>
-        <div className = "column2">
-          <p className="large text-center text-primary"><i className = "fas fa-exchange-alt"></i></p>
-          <p className = "lead text-center"> Choose your target language for conversion </p>
-          {/* <br/>
-          <br/> */}
+          <br/>
+          <br/>
+
           <div>
-            {/* <label for="targetLang">Choose source language</label> */}
+            <label for="targetLang">Choose source language</label>
             {' '}
             <select name="targetLang" className="btn btn-light"
                 value={targetLang}
@@ -168,10 +166,31 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
                 <option value="R">R</option>
             </select>
           </div>
+          <br/>
           <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
+        </div>
+        <div className = "column2">
+          {/* <p className="large text-center text-primary"><i className = "fas fa-exchange-alt"></i></p> */}
+          {/* <p className = "lead text-center"> Choose your target language for conversion </p> */}
+          {/* <br/>
+          <br/> */}
+          {/* <div>
+            <label for="targetLang">Choose source language</label>
+            {' '}
+            <select name="targetLang" className="btn btn-light"
+                value={targetLang}
+                onChange={e => onChange(e)}>
+                <option>Choose one..</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="R">R</option>
+            </select>
+          </div> */}
+          {/* <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button> */}
           {/* <button onClick={handleTranslateClick}type = "submit" className = "btn btn-primary" value="Submit"> Translate</button> */}
-          <p>Translated Content</p>
-          <p>{translation.content?<div><p>the output is <br/> {translation.content}</p></div>:null}</p>
+          <h2 className ="text-primary">Translated Content</h2>
+          <p>{translation.content?<div><p className = "text-dark">{translation.content}</p></div>:null}</p>
         </div>
       </div>
     {/* </div> */}
