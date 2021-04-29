@@ -89,17 +89,6 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
                 <option value="R">R</option>
             </select>
           </div>
-        {/* </div> */}
-          {/* <form className="text-center">
-            <select clasName="language-dropdown" id="#" name="#">
-              <option value="" selected disabled hidden>Choose language</option>
-              <option value="Python">Python</option>
-              <option value="Java">Java</option>
-              <option value="C++">C++</option>
-              <option value="R">R</option>
-            </select>
-            <br/>
-            <br/> */}
           <p className = "lead text-center">Upload Your Source File</p>
           {/* </form> */}
             
@@ -137,18 +126,6 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
                 <option value="R">R</option>
             </select>
           </div>
-          {/* <form className="text-center">
-            <select clasName="language-dropdown" id="#" name="#">
-              <option value="" selected disabled hidden>Choose language</option>
-              <option value="Python">Python</option>
-              <option value="Java">Java</option>
-              <option value="C++">C++</option>
-              <option value="R">R</option>
-            </select>
-            <br/>
-            <br/>
-            <button type = "submit" className = "btn btn-primary"> Translate</button>
-          </form> */}
           <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
         </div>
       </div>
