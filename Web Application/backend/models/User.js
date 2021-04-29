@@ -21,27 +21,32 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  translations: 
+  translations: [
     {
       date: {
         type: Date,
         default: Date.now
       },
-      sourceFile: [
+      sourceLang: {
+        type: String,
+        required: true,
+      },
+      sourceFile:
         {
         file: { type: String },
         }
-      ],
+      ,
       targetLang: {
         type: String,
         required: true,
       },
-      outputFile: [
+      outputFile:
         {
         file: { type: String },
         }
-      ],
+      ,
     },
+  ]
 });
 
 module.exports = User = mongoose.model('user', UserSchema);
