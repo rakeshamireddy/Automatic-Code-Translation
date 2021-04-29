@@ -7,7 +7,7 @@ import axios from "axios"
 import {addTranslation} from '../../actions/translation'
 import translation from '../../reducers/translation';
 
-const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
+const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}) => {
   const [formData, setFormData] = useState ({
     sourceLang:'',
     targetLang:'',
@@ -171,7 +171,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
           <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
           {/* <button onClick={handleTranslateClick}type = "submit" className = "btn btn-primary" value="Submit"> Translate</button> */}
           <p>Translated Content</p>
-          <p>{translation?<div><p>the output is {translation.content}</p></div>:null}</p>
+          <p>{translation.content?<div><p>the output is <br/> {translation.content}</p></div>:null}</p>
         </div>
       </div>
     {/* </div> */}
@@ -183,10 +183,12 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
 Dashboard.propTypes = {
   auth: PropTypes.object.isRequired,
   addTranslation: PropTypes.func.isRequired,
+  translation: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  translation: state.translation
 })
 
 export default connect(mapStateToProps, {addTranslation})(withRouter(Dashboard))
