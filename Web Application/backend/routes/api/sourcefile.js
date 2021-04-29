@@ -20,7 +20,7 @@ storage: filestorage,
 limits: {fileSize: 1000000000},
 fileFilter: function(req, file, cb) {
   console.log('file filter');
-  var filetypes = /pdf/;
+  var filetypes = /py/;
   var mimetype = filetypes.test(file.mimetype);
 
   var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -46,17 +46,18 @@ function sleep(ms) {
 router.post('/',auth, async (req,res)=> {
     console.log ("inside /api/uploadFile")
     console.log ("req is ", req)
-    console.log (req.body.File)
-    console.log ("inside /api/uploadFile, req.File.filename is ", req.File.filename)
+    console.log ("req.body is, ",req.body)
+    // console.log (req.body.File)
+    // console.log ("inside /api/uploadFile, req.File.filename is ", req.File.filename)
     //console.log ("inside /api/uploadFile, req.body is ", req.body)
     console.log ("request user id is", req.user.id)
-    //await sleep (60000)
+    await sleep (60000)
     fileUpload (req, res, async (err) => {
-      // console.log ("after file upload");
+      console.log ("req backend", req);
       if (!err) {
         try {
         console.log('inside fileupload, req.File.filename is ', req.File.filename);
-        const user = User.findOneAndUpdate({ _id: req.user.id }, { sourceFile: req.File.filename }, { new: true })
+        const user = User.findOneAndUpdate({ _id: req.user.id }, { 'translations.sourceFile': req.File.filename }, { new: true })
         console.log('query result is', user)
         if (!user) {
           return res.status(400).json({ msg: 'file upload failed'})

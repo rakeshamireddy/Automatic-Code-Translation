@@ -5,27 +5,37 @@ import {connect} from 'react-redux'
 import Spinner from '../layout/Spinner'
 import axios from "axios"
 import {addTranslation} from '../../actions/translation'
+import translation from '../../reducers/translation';
 
 const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
   const [formData, setFormData] = useState ({
     sourceLang:'',
-    targetLang:''
+    targetLang:'',
+    sourceFile:''
   })
 
   const {
     sourceLang,
     targetLang,
+    sourceFile,
   } = formData;
 
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
+  const [translatedContent, setTranslatedContent] = useState("empty");
 
   // for drop downs
-  const onChange = e =>
+  const onChange = e =>{
+    console.log (e.target.name)
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log (formData)
+    // if (selectedFile) setFormData({...formData, 'sourceFile':selectedFile.name})
+  }
+   
   
   const onSubmit = e => {
     e.preventDefault();
+    console.log ("inside onSubmit, formData is ",formData)
     addTranslation(formData, history)
   }
 
@@ -33,7 +43,39 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
     console.log ("inside changeHandler")
     setSelectedFile(event.target.files[0]);
     setIsFilePicked(true);
+    setTranslatedContent("not converted")    
+    setFormData ({...formData,'sourceFile':event.target.files[0].name})
+    // setFormData({ ...formData, ['sourceFile']:selectedFile})
     //console.log (selectedFile,isFilePicked)
+  }
+
+  const handleTranslateClick = (event) => {
+    event.preventDefault();
+    console.log ("inside handleTranslateClick")
+    if (selectedFile) {
+      console.log ("selected file is, ",selectedFile.name)
+      const res = axios.post('/api/uploadFile',selectedFile.name,{headers: {"Content-Type": "text/plain"}}).then(
+                (response) => 
+                  { //alert("file upload complete");
+                  setTranslatedContent(response.data);
+                })
+      // console.log (response.data)
+    }
+    // var child;
+    // console.log (child)
+    // const exec = require('child_process').exec
+    // console.log (exec)
+    // child = exec ('cat ../../frontend/src/files/public/uploads/'+selectedFile.name,
+    //                     function (error,stdout,stderr) {
+    //                       console.log ('stdout: '+stdout)
+    //                       console.log ('stderr: '+stderr)
+    //                       if (error != null) {
+    //                         console.log ("exec error: "+error)
+    //                       }
+    //                       setTranslatedContent(stdout)
+    //                     }
+    // )
+    // child ()
   }
 
   const handleSubmission = (event) => {
@@ -100,7 +142,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
               <div className="choose-file">
                   {/* className = "btn #64b5f6 blue darken-1" */}
                     {/* <span> Upload program file</span>  */}
-                <input type = "file" onChange={changeHandler}></input>
+                <input type = "file" onChange={changeHandler} name="sourceFile" val={sourceFile}></input>
                 {isFilePicked ? ( <div> <p>Filename: {selectedFile.name} Selected</p></div>): (<p>Select File</p>)}
               </div>
             </div>
@@ -127,6 +169,9 @@ const Dashboard = ({addTranslation, auth: {user, loading}, history}) => {
             </select>
           </div>
           <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
+          {/* <button onClick={handleTranslateClick}type = "submit" className = "btn btn-primary" value="Submit"> Translate</button> */}
+          <p>Translated Content</p>
+          <p>{translation?<div><p>the output is {translation.content}</p></div>:null}</p>
         </div>
       </div>
     {/* </div> */}
