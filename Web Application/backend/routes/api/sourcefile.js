@@ -57,12 +57,12 @@ router.post('/',auth, async (req,res)=> {
       if (!err) {
         try {
         console.log('inside fileupload, req.File.filename is ', req.file.originalname);
-        const user = User.findOneAndUpdate({ _id: req.user.id }, { $set: { 'translations.0.sourceFile': req.file.originalname }}) //{ new: true }
-        console.log('query result is', user)
-        if (!user) {
-          return res.status(400).json({ msg: 'file upload failed'})
-        }
-        res.json (user)
+        //const user = User.findOneAndUpdate({ _id: req.user.id }, { $set: { 'translations.0.sourceFile': req.file.originalname }}) //{ new: true }
+        //console.log('query result is', user)
+        // if (!user) {
+        //   return res.status(400).json({ msg: 'file upload failed'})
+        // }
+        res.json (true)
         } catch (error) {
           console.log ("caught error",error)
           res.status(500).send ("file save error")
