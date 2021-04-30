@@ -125,10 +125,10 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
                 value={sourceLang}
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
-                <option value="R">R</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="r">R</option>
             </select>
           </div>
           {/* <p className = "lead text-center">Upload Your Source File</p> */}
@@ -166,7 +166,19 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
             <button onClick={handleSubmission} type = "submit" className = "btn btn-primary"> Upload file</button>
           </form>
 
-         
+          <div>
+            <label for="targetLang">Choose source language</label>
+            {' '}
+            <select name="targetLang" className="btn btn-light"
+                value={targetLang}
+                onChange={e => onChange(e)}>
+                <option>Choose one..</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="r">R</option>
+            </select>
+          </div>
           <br/>
           <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
         </div>
