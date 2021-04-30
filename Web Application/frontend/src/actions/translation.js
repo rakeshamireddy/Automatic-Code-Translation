@@ -24,7 +24,7 @@ export const addTranslation = (formData, history) => async(
           payload: res.data,
       });
       // dispatch(setAlert(edit ? 'Event Updated' : 'Event Created', 'success'));
-      dispatch(setAlert('Added source and target languages', 'success'));
+      dispatch(setAlert('Translated successfully', 'success'));
       console.log ("returned from axios.post, res.data is ",res.data)
     //   return (res.data)
       history.push('/dashboard');
