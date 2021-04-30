@@ -34,7 +34,7 @@ router.put('/', [auth, [
   // cmd1 = 'python3 TransCoder/translate.py --src_lang python --tgt_lang java --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < fibo.py'
   // cmd1 = 'python3 TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < cat ../frontend/src/files/public/uploads/'+ sourceFile
   //cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
-  cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path /home/gcloud/model_2.pth < '+sourceFile
+  cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path /home/gcloud/model_2.pth < ../frontend/src/files/public/uploads/'+sourceFile
   // var cmdout
   // const util = require('util');
   // const exec = util.promisify(require('child_process').exec);
