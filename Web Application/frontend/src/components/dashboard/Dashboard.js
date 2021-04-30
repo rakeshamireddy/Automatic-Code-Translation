@@ -125,10 +125,10 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
                 value={sourceLang}
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
-                <option value="R">R</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="r">R</option>
             </select>
           </div>
           {/* <p className = "lead text-center">Upload Your Source File</p> */}
@@ -160,10 +160,10 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
                 value={targetLang}
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
-                <option value="R">R</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="r">R</option>
             </select>
           </div>
           <br/>
