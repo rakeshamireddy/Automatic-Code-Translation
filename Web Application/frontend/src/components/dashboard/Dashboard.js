@@ -5,9 +5,14 @@ import {connect} from 'react-redux'
 import Spinner from '../layout/Spinner'
 import axios from "axios"
 import {addTranslation} from '../../actions/translation'
+import * as ReactBootStrap from 'react-bootstrap'
 import translation from '../../reducers/translation';
 
 const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content, content_loading}, history}) => {
+
+  const [file_loading, setLoading] = useState(true)
+  const [translate_done, setTranslateState] = useState (true)
+
   const [formData, setFormData] = useState ({
     sourceLang:'',
     targetLang:'',
@@ -38,8 +43,12 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
   
   const onSubmit = e => {
     e.preventDefault();
-    console.log ("inside onSubmit, formData is ",formData)
+    console.log ("inside translate onSubmit, formData is ",formData)
+    //setTranslateState (true)
+    console.log ("translate_Done is", translate_done)
     addTranslation(formData, history)
+    //setTranslateState (false)
+    console.log ("translate_Done is", translate_done)
   }
 
   const changeHandler = (event) => {
@@ -52,27 +61,30 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
     //console.log (selectedFile,isFilePicked)
   }
 
-  const handleTranslateClick = (event) => {
-    event.preventDefault();
-    console.log ("inside handleTranslateClick")
-    if (selectedFile) {
-      console.log ("selected file is, ",selectedFile.name)
-      const res = axios.post('/api/uploadFile',selectedFile.name,{headers: {"Content-Type": "text/plain"}}).then(
-                (response) => 
-                  { //alert("file upload complete");
-                  setTranslatedContent(response.data);
-                })
-      // console.log (response.data)
-    }
-  }
+  // const handleTranslateClick = (event) => {
+  //   event.preventDefault();
+  //   console.log ("inside handleTranslateClick")
+  //   if (selectedFile) {
+  //     console.log ("selected file is, ",selectedFile.name)
+  //     const res = axios.post('/api/uploadFile',selectedFile.name,{headers: {"Content-Type": "text/plain"}}).then(
+  //               (response) => 
+  //                 { //alert("file upload complete");
+  //                 setTranslatedContent(response.data);
+  //               })
+  //     // console.log (response.data)
+  //   }
+  // }
 
   const handleSubmission = (event) => {
+    setLoading(false)
+    console.log ("file_loading is ",file_loading)
     event.preventDefault();
     console.log ("inside handleSubmission")
     const formData = new FormData ();
     formData.append('File',selectedFile)
     console.log ("inside handleSubmission formData content is", formData.get("File"))
     uploadFile(formData);
+    console.log ("file_loading is ",file_loading)
   }
   // removed async from async (formData), await from await axios
   const uploadFile = async (formData) => {
@@ -89,7 +101,9 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
                 (response) => 
                   {alert("file upload complete");
                   console.log('reponse is ',response);
+                  setLoading(true);
                 })
+    // setLoading(true)
   }
 
 
@@ -147,14 +161,21 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
                   {/* className = "btn #64b5f6 blue darken-1" */}
                     {/* <span> Upload program file</span>  */}
                 <input type = "file" onChange={changeHandler} name="sourceFile" val={sourceFile}></input><br/>
-                {isFilePicked ? ( <div> <p>Filename: {selectedFile.name} Selected</p></div>): (<span className = "text-danger">Select File</span>)}
+                {/* { file_loading && isFilePicked ? ( <div> <p>Filename: {selectedFile.name} Selected</p></div>): (
+                // <span className = "text-danger">Select File</span>
+                <ReactBootStrap.Spinner animation='border'/>
+                
+                
+                )} */}
               </div>
             </div>
               <br/>
             <button onClick={handleSubmission} type = "submit" className = "btn btn-primary"> Upload file</button>
+            {file_loading?null:<Spinner/>}
           </form>
           <br/>
           <button type = "submit" className = "btn btn-primary btn2" value="Submit"> Translate</button>
+          {!translate_done?<Spinner/>:null}
         </div>
         <div className = "column2">
           <h2 className ="text-primary">Translated Content</h2>

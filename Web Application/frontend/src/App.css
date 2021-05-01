@@ -304,6 +304,12 @@ img {
   border: 1px solid #ccc;
 }
 
+
+.choose-file input[type='file'] {
+  color: black
+  
+}
+
 .form input[type='submit'],
 button {
   font: inherit;
