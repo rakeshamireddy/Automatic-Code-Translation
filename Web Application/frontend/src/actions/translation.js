@@ -28,6 +28,7 @@ export const addTranslation = (formData, history) => async(
       console.log ("returned from axios.post, res.data is ",res.data)
     //   return (res.data)
       history.push('/dashboard');
+      // setLoading(true);
       // if (!edit) {
       //     history.push('/restdashboard');
       // }

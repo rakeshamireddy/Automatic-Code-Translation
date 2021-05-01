@@ -7,7 +7,7 @@ import axios from "axios"
 import {addTranslation} from '../../actions/translation'
 import translation from '../../reducers/translation';
 
-const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}) => {
+const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content, content_loading}, history}) => {
   const [formData, setFormData] = useState ({
     sourceLang:'',
     targetLang:'',
@@ -32,6 +32,9 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
     // if (selectedFile) setFormData({...formData, 'sourceFile':selectedFile.name})
   }
    
+  const refreshPage = () =>{
+    window.location.reload(false)
+  }
   
   const onSubmit = e => {
     e.preventDefault();
@@ -61,21 +64,6 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
                 })
       // console.log (response.data)
     }
-    // var child;
-    // console.log (child)
-    // const exec = require('child_process').exec
-    // console.log (exec)
-    // child = exec ('cat ../../frontend/src/files/public/uploads/'+selectedFile.name,
-    //                     function (error,stdout,stderr) {
-    //                       console.log ('stdout: '+stdout)
-    //                       console.log ('stderr: '+stderr)
-    //                       if (error != null) {
-    //                         console.log ("exec error: "+error)
-    //                       }
-    //                       setTranslatedContent(stdout)
-    //                     }
-    // )
-    // child ()
   }
 
   const handleSubmission = (event) => {
@@ -84,7 +72,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
     const formData = new FormData ();
     formData.append('File',selectedFile)
     console.log ("inside handleSubmission formData content is", formData.get("File"))
-    uploadFile(formData)
+    uploadFile(formData);
   }
   // removed async from async (formData), await from await axios
   const uploadFile = async (formData) => {
@@ -121,7 +109,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
           <div>
             <label for="sourceLang">Choose source language</label>
             {' '}
-            <select name="sourceLang" className="btn btn-light"
+            <select name="sourceLang" className="btn bg-primary"
                 value={sourceLang}
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
@@ -137,9 +125,9 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
             <br/>
             <br/>
             <div>
-            <label for="targetLang">Choose source language</label>
+            <label for="targetLang" >Choose target language</label>
             {' '}
-            <select name="targetLang" className="btn btn-light"
+            <select name="targetLang" className="btn bg-primary"
                 value={targetLang}
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
@@ -165,49 +153,25 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation, history}
               <br/>
             <button onClick={handleSubmission} type = "submit" className = "btn btn-primary"> Upload file</button>
           </form>
-
-          <div>
-            <label for="targetLang">Choose source language</label>
-            {' '}
-            <select name="targetLang" className="btn btn-light"
-                value={targetLang}
-                onChange={e => onChange(e)}>
-                <option>Choose one..</option>
-                <option value="python">Python</option>
-                <option value="java">Java</option>
-                <option value="c++">C++</option>
-                <option value="r">R</option>
-            </select>
-          </div>
           <br/>
           <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
         </div>
         <div className = "column2">
-          {/* <p className="large text-center text-primary"><i className = "fas fa-exchange-alt"></i></p> */}
-          {/* <p className = "lead text-center"> Choose your target language for conversion </p> */}
-          {/* <br/>
-          <br/> */}
-          {/* <div>
-            <label for="targetLang">Choose source language</label>
-            {' '}
-            <select name="targetLang" className="btn btn-light"
-                value={targetLang}
-                onChange={e => onChange(e)}>
-                <option>Choose one..</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
-                <option value="R">R</option>
-            </select>
-          </div> */}
-          {/* <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button> */}
-          {/* <button onClick={handleTranslateClick}type = "submit" className = "btn btn-primary" value="Submit"> Translate</button> */}
           <h2 className ="text-primary">Translated Content</h2>
-          <p>{translation.content?<div><p className = "text-dark">{translation.content}</p></div>:null}</p>
+          {content_loading && content === null ? null: <p className = "text-dark">{content}</p>}
+          {/* <p>{content?<div><p className = "text-dark">{translation.content}</p></div>: null}</p> */}
+          <br/>
+          <br/>
+          {/* <Link to="/dashboard" className="btn btn-primary">Make New Translation</Link> */}
+          <button onClick={refreshPage} className = 'btn btn-primary'>Make New Translation </button>
         </div>
+       
+        
+        
       </div>
     {/* </div> */}
     </form>
+    
 
   </Fragment>
 }

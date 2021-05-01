@@ -2,7 +2,7 @@ import { UPDATE_USER, UPDATE_USER_ERROR} from '../actions/types';
 
 const initialState = {
     content: null,
-    loading: true,
+    content_loading: true,
     error: {}
 }
 
@@ -14,13 +14,13 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 content: payload,
-                loading: false
+                content_loading: false
             }
         case UPDATE_USER_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading: false
+                content_loading: false
             };
 
         // case CLEAR_PROFILE:

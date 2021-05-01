@@ -29,44 +29,19 @@ router.put('/', [auth, [
     targetLang,
     sourceFile,
   };
+  // if (sourceLang === 'python' && targetLang === 'r') {
+  //   cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
+  // } else {
+  //   cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
+  // }
   // var child;
   // console.log (child)
   // cmd1 = 'python3 TransCoder/translate.py --src_lang python --tgt_lang java --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < fibo.py'
   // cmd1 = 'python3 TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < cat ../frontend/src/files/public/uploads/'+ sourceFile
-  //cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
+  cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
   //cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/BPE_with_comments_codes --model_path /home/gcloud/model_2.pth < ../frontend/src/files/public/uploads/'+sourceFile //Python to Java
-  cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments/codes --model_path /output_folder_path/bt_with_comments_sa_final_modif_test/x7a82thbs6/checkpoint.pth < ../frontend/src/files/public/uploads/'+sourceFile   //Python to R
-  // var cmdout
-  // const util = require('util');
-  // const exec = util.promisify(require('child_process').exec);
-  // async function getOut(cmd) {
-  //   try {
-  //     const { stdout, stderr } = await exec(cmd);
-  //     console.log('stdout:', stdout);
-  //     console.log('stderr:', stderr);
-  //     return stdout
-  //   } catch (err) {
-  //     console.error(err);
-  //  };
-  // }
-  // cmdout = getOut(cmd1)
-  // const { spawn } = require('child_process');
-  // const child = spawn('ls', );
-  // child.stdout.pipe(cmdout)
-  // const exec = require('child_process').exec
-  // console.log (exec)
-  // child = exec (cmd1,
-  //                     function (error,stdout,stderr) {
-  //                       console.log ('stdout: '+stdout)
-  //                       console.log ('stderr: '+stderr)
-  //                       if (error != null) {
-  //                         console.log ("exec error: "+error)
-  //                       }
-  //                       // setTranslatedContent(stdout)
-  //                     }
-  // )
-  // // res.json (stdout)
-  // console.log ('cmdout is',cmdout)
+  // cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments/codes --model_path /output_folder_path/bt_with_comments_sa_final_modif_test/x7a82thbs6/checkpoint.pth < ../frontend/src/files/public/uploads/'+sourceFile   //Python to R
+  
   try {
       // console.log("req", req)
       const user = await User.findOne({ _id: req.user.id });
