@@ -38,7 +38,7 @@ router.put('/', [auth, [
   // console.log (child)
   // cmd1 = 'python3 TransCoder/translate.py --src_lang python --tgt_lang java --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < fibo.py'
   // cmd1 = 'python3 TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+' --BPE_path TransCoder/data/BPE_with_comments_codes --model_path model_2.pth < cat ../frontend/src/files/public/uploads/'+ sourceFile
-  cmd1 = 'sleep 30;cat ../frontend/src/files/public/uploads/'+sourceFile
+  cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
   //cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/BPE_with_comments_codes --model_path /home/gcloud/model_2.pth < ../frontend/src/files/public/uploads/'+sourceFile //Python to Java
   // cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments/codes --model_path /output_folder_path/bt_with_comments_sa_final_modif_test/x7a82thbs6/checkpoint.pth < ../frontend/src/files/public/uploads/'+sourceFile   //Python to R
   

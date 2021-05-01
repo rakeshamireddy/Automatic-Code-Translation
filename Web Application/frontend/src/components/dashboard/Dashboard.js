@@ -171,11 +171,14 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
             </div>
               <br/>
             <button onClick={handleSubmission} type = "submit" className = "btn btn-primary"> Upload file</button>
-            {file_loading?null:<Spinner/>}
+            
+            {file_loading?null:
+            <i className = "fa fa-refresh fa-spin"></i>
+            }
           </form>
           <br/>
           <button type = "submit" className = "btn btn-primary btn2" value="Submit"> Translate</button>
-          {!translate_done?<Spinner/>:null}
+          {!translate_done?<i className = "fa fa-refresh fa-spin"></i>:null}
         </div>
         <div className = "column2">
           <h2 className ="text-primary">Translated Content</h2>
