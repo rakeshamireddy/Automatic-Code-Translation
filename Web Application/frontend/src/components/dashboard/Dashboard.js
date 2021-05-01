@@ -154,7 +154,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
             <button onClick={handleSubmission} type = "submit" className = "btn btn-primary"> Upload file</button>
           </form>
           <br/>
-          <button type = "submit" className = "btn btn-primary" value="Submit"> Translate</button>
+          <button type = "submit" className = "btn btn-primary btn2" value="Submit"> Translate</button>
         </div>
         <div className = "column2">
           <h2 className ="text-primary">Translated Content</h2>
@@ -163,7 +163,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
           <br/>
           <br/>
           {/* <Link to="/dashboard" className="btn btn-primary">Make New Translation</Link> */}
-          <button onClick={refreshPage} className = 'btn btn-primary'>Make New Translation </button>
+          <button onClick={refreshPage} className = 'btn btn-primary btn2'>Make New Translation </button>
         </div>
        
         
