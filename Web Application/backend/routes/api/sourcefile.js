@@ -20,7 +20,7 @@ storage: filestorage,
 limits: {fileSize: 1000000000},
 fileFilter: function(req, file, cb) {
   console.log('file filter');
-  var filetypes = /py,r/;
+  var filetypes = /py|r/;
   var mimetype = filetypes.test(file.mimetype);
 
   var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
