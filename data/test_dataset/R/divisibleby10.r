@@ -1,10 +1,7 @@
 divisibleby10 <- function(num) {
 if(num %% 10 == 0){
-    print("True")
+    return (TRUE)
 }else{
-    print("False")
+    return (FALSE)
 }
-
 }
-
-divisibleby10(60)
