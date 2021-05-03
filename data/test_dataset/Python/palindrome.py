@@ -6,8 +6,6 @@ def palindrome(num):
         rev = rev * 10 + dig
         num = num // 10
     if(temp == rev):
-        print("Number is palindrome")
+        return True
     else: 
-        print("Number is not palidrome")
-
-palindrome(131)
+        return False
