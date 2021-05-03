@@ -1,7 +1,5 @@
 def areaSquare(side):
     if(side <= 0 ):
-        print 'Invalid measurement'
+        return -1
     else:
-        print 'Area of the square is : ', side*side
-
-areaSquare(4)
+        return (side*side)
