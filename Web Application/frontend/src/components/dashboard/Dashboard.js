@@ -128,8 +128,8 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
                 <option value="python">Python</option>
-                <option value="java">Java</option>
-                <option value="c++">C++</option>
+                {/* <option value="java">Java</option>
+                <option value="c++">C++</option> */}
                 <option value="r">R</option>
             </select>
           </div>
@@ -145,10 +145,10 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
                 value={targetLang}
                 onChange={e => onChange(e)}>
                 <option>Choose one..</option>
-                <option value="Python">Python</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
-                <option value="R">R</option>
+                <option value="python">Python</option>
+                {/* <option value="java">Java</option>
+                <option value="c++">C++</option> */}
+                <option value="r">R</option>
             </select>
           </div>
           <br/>

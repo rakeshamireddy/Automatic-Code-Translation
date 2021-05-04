@@ -10,12 +10,6 @@ def prime_numbers(n):
                       break
              else:
                  prime_nums.append(i)
-                
-                
-
         return(prime_nums)
      else: 
-           print("Input number should be at least 2.")
-      
-
-prime_numbers(12)
+           print('Input number should be at least 2')

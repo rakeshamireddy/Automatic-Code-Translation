@@ -1,4 +1,3 @@
-#Perfect number program
 def perfect_number(n):
     sum = 0
     for x in range(1, n):
