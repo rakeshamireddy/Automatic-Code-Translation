@@ -1,5 +1,6 @@
+perfect <- function()
 {
-    n <- as.integer(readline(prompt = "Enter a number :"))
+    n <- 24
     i = 1
     s = 0
 
@@ -11,8 +12,8 @@
     }
 
     if (s == n) {
-      print(paste("The number is perfect :", n))
+      return(n)
     } else{
-      print(paste("The number is not perfect :", n))
+      return(n)
     }
 }

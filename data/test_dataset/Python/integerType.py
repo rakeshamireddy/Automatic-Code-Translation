@@ -1,10 +1,8 @@
 def integerType(num):
     if (num > 0):
-        print("Number is Postive integer")
+        return 1
     if(num < 0):
-        print("Number is Negative integer")
+        return -1
     if(num == 0):
-        print("Number is Zero")
-
-integerType(-45)
+        return 0
 

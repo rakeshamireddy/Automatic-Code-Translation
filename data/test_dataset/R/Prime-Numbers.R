@@ -12,7 +12,7 @@ prime_numbers <- function(n) {
   }
   else 
   {
-    stop("Input number should be at least 2.")
+    stop('Input number should be at least 2.')
   }
 } 
 prime_numbers(12)

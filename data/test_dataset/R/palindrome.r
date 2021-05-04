@@ -1,19 +1,16 @@
-palindrome <- function(n){
-rev = 0
-    num = n
-
-    while (n > 0) {
-      r = n %% 10
-      rev = rev * 10 + r
-      n = n %/% 10
+palindrome <- function(num){
+    rev = 0
+    temp = num
+    while (num > 0) {
+      dig = num %% 10
+      rev = rev * 10 + dig
+      num = num %/% 10
     }
-
-    if (rev == num)
+    if (rev == temp)
     {
-      print(paste("Number is palindrome :", rev))
+     return (TRUE)
     }
     else{
-      print(paste("Number is not palindrome :", rev))
+      return (FALSE)
     }
 }
-palindrome(121)
