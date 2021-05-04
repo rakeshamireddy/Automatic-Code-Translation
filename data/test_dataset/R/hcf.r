@@ -1,7 +1,6 @@
-# Program to find the H.C.F of two input number
-# define a function
 hcf <- function(x, y) {
-# choose the smaller number
+  x = 12
+  y = 36
 if(x > y) {
 smaller = y
 } else {
@@ -14,7 +13,4 @@ hcf = i
 }
 return(hcf)
 }
-# take input from the user
-num1 = 12
-num2 = 36
-print(paste("The H.C.F. of", num1,"and", num2,"is", hcf(num1, num2)))
+

@@ -1,3 +1,4 @@
+def armstrong():
 num = 6
 sum = 0
 temp = num

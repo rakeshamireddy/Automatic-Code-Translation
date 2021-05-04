@@ -1,0 +1,15 @@
+params.mono: dict_values([{'train': '/home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/train.r.pth', 'valid': '/home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/valid.r.pth', 'test': '/home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/test.r.pth'}, {'train': '/home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/train.python.pth', 'valid': '/home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/valid.python.pth', 'test': '/home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/test.python.pth'}])
+SLURM job: False
+0 - Number of nodes: 1
+0 - Node ID        : 0
+0 - Local rank     : 0
+0 - Global rank    : 0
+0 - World size     : 1
+0 - GPUs per node  : 1
+0 - Master         : True
+0 - Multi-node     : False
+0 - Multi-GPU      : False
+0 - Hostname       : auto-code-transl-vm
+debug_train: False
+path: /home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments.XLM-syml/train.r.pth
+single GPU
