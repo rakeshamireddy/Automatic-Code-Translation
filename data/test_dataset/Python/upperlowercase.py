@@ -4,7 +4,7 @@ def upper_case(word):
 def lower_case(word):
     print word.lower()
 
-word = "Dictionary"
+word = 'Dictionary'
 
 upper_case(word)
 lower_case(word)
