@@ -1,13 +1,11 @@
 def great(x,y,z):
-num1 = 10
-num2 = 14
-num3 = 12
+x = 10
+y = 14
+z = 12
 
-if (num1 >= num2) and (num1 >= num3):
-   largest = num1
-elif (num2 >= num1) and (num2 >= num3):
-   largest = num2
+if (x >= y) and (x >= z):
+   return (x)
+elif (y >= x) and (y >= z):
+   return (y)
 else:
-   largest = num3
-
-return(largest)
+   return (z)

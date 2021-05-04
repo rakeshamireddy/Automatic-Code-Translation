@@ -1,7 +1,6 @@
 def odd_or_even(n):
     num = n
-    
     if((num % 2) == 0):
-        print('{} is Even'.format(num))
+        print('even')
     else:
-        print('{} is Odd'.format(num))
+        print('odd')
