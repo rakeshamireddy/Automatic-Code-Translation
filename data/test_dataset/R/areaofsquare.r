@@ -1,8 +1,8 @@
-areaSquare <- function(num) {
-   if  (num <= 0){
+areaSquare <- function(side) {
+   if  (side <= 0){
         return (-1)
    }else {
-       return (num*num)
+       return (side*side)
    }
 }
 

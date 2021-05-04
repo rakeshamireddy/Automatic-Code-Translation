@@ -1,3 +1,3 @@
-add2nums <- function(num1, num2) {
-   return( num1+num2) 
+add2nums <- function(a, b) {
+   return( a+b) 
 }

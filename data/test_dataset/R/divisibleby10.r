@@ -1,5 +1,5 @@
-divisibleby10 <- function(num) {
-if(num %% 10 == 0){
+divisibleby10 <- function(n) {
+if(n %% 10 == 0){
     return (TRUE)
 }else{
     return (FALSE)

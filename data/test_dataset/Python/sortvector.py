@@ -1,3 +1,3 @@
-def sortVector(nums):
-    nums.sort()
-    return nums
+def sortVector(vector):
+    vector.sort()
+    return vector

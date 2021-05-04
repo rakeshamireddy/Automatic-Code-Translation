@@ -1,6 +1,6 @@
-sum <- function(vector){
+sum <- function(nums){
 result <- 0
-for(i in vector){
+for(i in nums){
     result = result + i
 }
 return(result)

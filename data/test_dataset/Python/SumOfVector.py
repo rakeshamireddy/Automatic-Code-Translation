@@ -1,5 +1,5 @@
 def sum(nums):
-    sum = 0
-    for x in nums:
-        sum = sum + x
-    return (sum)
+    result = 0
+    for i in nums:
+        result = result + i
+    return (result)
