@@ -5,8 +5,5 @@ def fibonacci(n):
     for i in range(2,n):
         
            fibonacci_seq[i] = fibonacci_seq[i - 2] + fibonacci_seq[i - 1]
-    print("First {} Fibonacci numbers:".format(n))
+    print('First {} Fibonacci numbers:'.format(n))
     print(fibonacci_seq)
-
-
-fibonacci(10)
