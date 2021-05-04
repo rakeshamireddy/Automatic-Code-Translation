@@ -1,11 +1,11 @@
 integerType <- function(num){
 if(num > 0) {
-print('Positive number')
+return(1)
 } else {
 if(num == 0) {
-print('Zero')
+return(0)
 } else {
-print('Negative number')
+return(-1)
 }
 }
 }
