@@ -1,9 +1,10 @@
-#R program to print factors
+factors <- function(n) {
 n=14
 for(i in 1:n)
 {
 if((n%%i)==0)
 {
-  print(i)
+  return(i)
+}
 }
 }
