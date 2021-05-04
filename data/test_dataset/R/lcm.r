@@ -3,7 +3,8 @@ lcm <- function(x, y) {
 
 if(x > y) {
 greater = x
-} else {
+} 
+else {
 greater = y
 }
 while(TRUE) {
@@ -15,7 +16,3 @@ greater = greater + 1
 }
 return(lcm)
 }
-
-num1 = 48
-num2 = 72
-return(lcm)
