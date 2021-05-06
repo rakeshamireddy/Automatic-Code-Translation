@@ -108,8 +108,8 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
 
 
   return loading && user === null ? <Spinner/> : <Fragment>
-    <h1 className='large text-primary'>Automatic Code Translation</h1>
-    <p className = "lead"> <i className="fas fa-user"></i> Welcome {user && user.name}</p>
+    <h1 className='large text-primary'>Welcome to Code Translator</h1>
+    <p className = "lead"> <i className="fas fa-user"></i> Hello, {user && user.name}</p>
     <br/>
     <br/>
     {/* <div className = "container"> */}
@@ -179,6 +179,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
           <br/>
           <button type = "submit" className = "btn btn-primary btn2" value="Submit"> Translate</button>
           {!translate_done?<i className = "fa fa-refresh fa-spin"></i>:null}
+          <button onClick={refreshPage} className = 'btn btn-primary btn2'>New Translation </button>
         </div>
         <div className = "column2">
           <h2 className ="text-primary">Translated Content</h2>
@@ -187,7 +188,7 @@ const Dashboard = ({addTranslation, auth: {user, loading}, translation: {content
           <br/>
           <br/>
           {/* <Link to="/dashboard" className="btn btn-primary">Make New Translation</Link> */}
-          <button onClick={refreshPage} className = 'btn btn-primary btn2'>Make New Translation </button>
+          
         </div>
        
         

@@ -12,7 +12,7 @@ export const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large">Transcoder</h1>
+          <h1 className="x-large">Code<span className="x-large text-primary">Translator</span></h1>
           <p className="lead">
             Translate your code between R and python programming languages
           </p>
