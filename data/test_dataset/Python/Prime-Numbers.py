@@ -1,5 +1,4 @@
 def prime_numbers(n):
-    
      prime_nums = [] 
      if (n >= 2):
         

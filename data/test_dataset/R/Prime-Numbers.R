@@ -15,4 +15,4 @@ prime_numbers <- function(n) {
     stop('Input number should be at least 2.')
   }
 } 
-prime_numbers(12)
+

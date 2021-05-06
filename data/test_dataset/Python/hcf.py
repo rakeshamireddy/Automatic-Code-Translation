@@ -7,7 +7,4 @@ def compute_hcf(x, y):
         if((x % i == 0) and (y % i == 0)):
             hcf = i 
     return hcf
-num1 = 54 
-num2 = 24
 
-print('The H.C.F. is', hcf)

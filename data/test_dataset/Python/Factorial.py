@@ -7,4 +7,4 @@ def factorial(n):
     else:
         for i in range(1,n):
             factorial = factorial * i
-        print(factorial)
+        return factorial
