@@ -32,7 +32,7 @@ router.put('/', [auth, [
    console.log('sourceLang:',sourceLang)
    console.log('targetLang:',targetLang)
    if ((sourceLang == 'python' && targetLang == 'r')||(sourceLang == 'r' && targetLang == 'python')) {
-    cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments/codes --model_path /output_folder_path/bt_with_comments_sa_final_modif_test/x7a82thbs6/checkpoint.pth < ../frontend/src/files/public/uploads/'+sourceFile   //Python to R
+    cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/test_dataset/python-r-.with_comments/codes --model_path /output_folder_path/bt_with_comments_sa_final_modif_test/cdne5yrb53/checkpoint.pth < ../frontend/src/files/public/uploads/'+sourceFile   //Python to R
   //   cmd1 = 'cat ../frontend/src/files/public/uploads/'+sourceFile
    } else {
     cmd1 = 'python3 /home/gcloud/TransCoder/translate.py --src_lang '+sourceLang+' --tgt_lang '+targetLang+ ' --BPE_path /home/gcloud/TransCoder/data/BPE_with_comments_codes --model_path /home/gcloud/model_2.pth < ../frontend/src/files/public/uploads/'+sourceFile //Python to Java
