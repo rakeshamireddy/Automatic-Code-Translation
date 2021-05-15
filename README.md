@@ -10,7 +10,7 @@ However, if this approach is applied to the machine translations between the pro
            
 With more than 80% of in-person financial transactions and up to 95% of all ATM transactions using COBOL, legacy languages such as FORTRAN for High Performance Computing, Lisp  are still widely used. These legacy languages are not compatible or convenient to work with and have dearth of developers making improvements or concerted platforms for them. Though the Facebook study has achieved satisfactory results in translating the programming languages, their models could translate among Python, C++, and Java. Our goal of the project is to explore more on the translations among programming languages in addition to Python, Java, and C++. Our main focus is to develop models that rely completely on monolingual corpora without using parallel corpora that requires manual labeling and achieve higher accuracy. Our models will be evaluated using various algorithms and different test cases will be generated to check their efficiency.
 
-Project Architecture:
+##Project Architecture:
 
 ![image](https://user-images.githubusercontent.com/47293060/118346348-a26a7000-b4ef-11eb-8c5f-84377b8fd72e.png)
 
