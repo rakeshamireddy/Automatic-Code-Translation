@@ -13,3 +13,5 @@ With more than 80% of in-person financial transactions and up to 95% of all ATM 
 Project Architecture:
 
 ![image](https://user-images.githubusercontent.com/47293060/118346348-a26a7000-b4ef-11eb-8c5f-84377b8fd72e.png)
+
+Our end-to-end project design has a front-end component with a MERN stack, a CUDA environment for Training and a neural transcompiler, called a transformer. The transformer has been pre trained on C++, Java and Python programs and requires less time to tune and train when compared to its counterparts like RNN and LSTM. Transfer Learning is applied when it comes to training the model on R and Python alternatively between batches of back translation and the denoising auto encoder approaches. The model uses Adam Optimizer, paired with an attention mechanism to achieve excellent results.
